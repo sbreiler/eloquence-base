@@ -1,6 +1,8 @@
 # Sofa/Eloquence
 
-[![Build Status](https://travis-ci.org/jarektkaczyk/eloquence-base.svg)](https://travis-ci.org/jarektkaczyk/eloquence-base) [![Coverage Status](https://coveralls.io/repos/jarektkaczyk/eloquence-base/badge.svg)](https://coveralls.io/r/jarektkaczyk/eloquence-base) [![Code Quality](https://scrutinizer-ci.com/g/jarektkaczyk/eloquence-base/badges/quality-score.png)](https://scrutinizer-ci.com/g/jarektkaczyk/eloquence-base) [![Downloads](https://poser.pugx.org/sofa/eloquence-base/downloads)](https://packagist.org/packages/sofa/eloquence-base) [![stable](https://poser.pugx.org/sofa/eloquence-base/v/stable.svg)](https://packagist.org/packages/sofa/eloquence-base)
+**Custom Fork, which works with Laravel v5.6**
+
+[See original idea](https://github.com/jarektkaczyk/eloquence-base/pull/1)
 
 Easy and flexible extensions for the [Eloquent ORM](https://laravel.com/docs/eloquent).
 
@@ -17,19 +19,44 @@ Currently available extensions:
 
 ## Installation
 
-```bash
-composer require sofa/eloquence-base
+Add custom repositories to your composer.json:
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/sbreiler/eloquence-base"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/sbreiler/hookable"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/sbreiler/eloquence-mutable"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/sbreiler/eloquence-metable"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/sbreiler/eloquence-validable"
+    },
+    {
+        "type": "vcs",
+        "url": "https://github.com/sbreiler/eloquence-mappable"
+    }
+]
+```
+and require packages with version 5.6, e.g.:
+```json
+"require": {
+  "sofa/eloquence-base": "5.6.*",
+  "sofa/eloquence-mappable": "5.6.*",
+  "sofa/eloquence-metable": "5.6.*",
+  "sofa/eloquence-mutable": "5.6.*",
+  "sofa/eloquence-validable": "5.6.*"
+}
 ```
 
 **Check the [documentation](https://github.com/jarektkaczyk/eloquence/wiki) for installation and usage info, [website](http://softonsofa.com/tag/eloquence/) for examples and [API reference](http://jarektkaczyk.github.io/eloquence-api)**
-
-## Contribution
-
-Shout out to all the Contributors!
-
-All contributions are welcome, PRs must be **tested** and **PSR-2 compliant**.
-
-To validate your builds before committing use the following composer command:
-```bash
-composer test
-```
